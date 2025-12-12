@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AS AGRICULTURE LLC - Leaders in sustainable crop production, forestry, and agricultural innovation in California.">
+    <meta name="format-detection" content="telephone=no">
+    <title>AS AGRICULTURE LLC | Sustainable Crop Production & Forestry</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* * CORE VARIABLES & RESET
+         */
+        :root {
+            --color-primary: #1A3C28; /* Deep Forest Green */
+            --color-secondary: #C8A165; /* Harvest Gold */
+            --color-background: #F9F7F2; /* Soft Cream */
+            --color-surface: #FFFFFF;
+            --color-text-dark: #1F2937;
+            --color-text-light: #6B7280;
+            --color-white: #FFFFFF;
+            --color-error: #EF4444;
+            --color-success: #10B981;
+            
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Manrope', sans-serif;
+
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+
+            --border-radius: 8px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* * TYPOGRAPHY
+         */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-primary);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* * UTILITIES & LAYOUT
+         */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-lg) auto;
+            text-align: center;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* * BUTTONS
+         */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border-radius: 4px; /* Slightly squared for premium feel */
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: #b38b4d;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--color-white);
+            color: var(--color-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        /* * HEADER / NAV
+         */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(26, 60, 40, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.25rem 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-white);
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--color-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--color-white);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* * HERO SECTION
+         */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+            background-image: url('https://images.unsplash.com/photo-1625246333195-5512a1251342?q=80&w=2670&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin-bottom: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(26, 60, 40, 0.4), rgba(26, 60, 40, 0.8));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 var(--spacing-md);
+            animation: fadeUp 1s ease-out;
+        }
+
+        .hero h1 {
+            color: var(--color-white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-lg);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* * ABOUT SECTION
+         */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            height: 500px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* * SERVICES SECTION
+         */
+        .bg-white {
+            background-color: var(--color-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--color-background);
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(26, 60, 40, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-secondary);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-white);
+            border-radius: 50%;
+            color: var(--color-secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* * ADVANTAGES / MISSION
+         */
+        .advantages-section {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantages-section .section-eyebrow {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .advantages-section h2, 
+        .advantages-section p {
+            color: var(--color-white);
+        }
+        
+        .advantages-section p {
+            opacity: 0.8;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .advantage-item {
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .advantage-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--color-secondary);
+        }
+
+        .advantage-number {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--color-secondary);
+            opacity: 0.5;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        /* * WORKFLOW SECTION
+         */
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .workflow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .step-circle {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-white);
+            border: 2px solid var(--color-primary);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .workflow-step:hover .step-circle {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-secondary);
+        }
+
+        /* Connecting line */
+        .workflow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: #E5E7EB;
+            z-index: 1;
+        }
+
+        /* * FOOTER
+         */
+        .footer {
+            background-color: #111827;
+            color: var(--color-white);
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-white);
+        }
+
+        .footer-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .footer-block h4 {
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-block p {
+            color: #9CA3AF;
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+
+        /* * MODAL
+         */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: var(--color-white);
+            width: 100%;
+            max-width: 500px;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            position: relative;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-text-light);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--color-error);
+            transform: rotate(90deg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 0 3px rgba(200, 161, 101, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background-color: #DEF7EC;
+            color: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .success-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        /* * ANIMATIONS
+         */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* * MEDIA QUERIES
+         */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                height: 350px;
+            }
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .nav-links {
+                display: none; /* Simplification for pure CSS/HTML task */
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .workflow-step {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                gap: 1.5rem;
+                padding: 0;
+            }
+
+            .workflow-step:not(:last-child)::after {
+                display: none; /* Remove horizontal lines on mobile */
+            }
+
+            .step-circle {
+                margin: 0;
+                flex-shrink: 0;
+                width: 60px;
+                height: 60px;
+                font-size: 1.25rem;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-container {
+                padding: 1.5rem;
+                margin: 1rem;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 19H22L12 2Z" fill="#C8A165"/>
+                    <path d="M12 6L5.5 17H18.5L12 6Z" fill="#1A3C28"/>
+                </svg>
+                AS AGRICULTURE <span>LLC</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#process" class="nav-link">Workflow</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="btn btn-primary open-modal-btn">Get in Touch</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Cultivating the Future of Sustainable Harvests</h1>
+            <h2>Leading the way in precision crop production, forestry management, and ecological stewardship for a balanced tomorrow.</h2>
+            <div class="hero-actions">
+                <button class="btn btn-primary open-modal-btn">Start a Project</button>
+                <a href="#about" class="btn btn-outline" style="margin-left: 1rem;">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Who We Are</span>
+                <h2>Rooted in Tradition, Driven by Innovation</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop" alt="Rich farmland landscape at sunset">
+                </div>
+                <div class="about-content">
+                    <p>At <strong>AS AGRICULTURE LLC</strong>, we represent the nexus of modern agronomy and responsible land stewardship. Founded with a vision to redefine yield potential without compromising the environment, we specialize in diverse crop farming and forestry management across California and beyond.</p>
+                    <p>Our philosophy is simple: the soil is a living asset. We employ data-driven techniques to maximize productivity in crop production while simultaneously preserving the biodiversity of the ecosystems we manage.</p>
+                    <p>With decades of collective experience in the agriculture, fishing, and hunting sectors, our team brings a holistic approach to resource management. We don't just grow crops; we cultivate sustainable cycles that benefit landowners, communities, and the planet.</p>
+                    <p>From precision irrigation systems to forestry conservation planning, AS AGRICULTURE LLC stands as a partner in long-term agricultural success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section bg-white" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Our Expertise</span>
+                <h2>Comprehensive Agricultural Solutions</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C7.03 2 3 6.03 3 11V22H21V11C21 6.03 16.97 2 12 2ZM19 20H5V11C5 7.13 8.13 4 12 4C15.87 4 19 7.13 19 11V20Z"/>
+                            <path d="M12 6C9.24 6 7 8.24 7 11V18H17V11C17 8.24 14.76 6 12 6Z" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3>Specialty Crop Farming</h3>
+                    <p>We leverage advanced agronomic practices to cultivate high-value crops tailored to specific microclimates. Our methods ensure optimal soil health and maximizing yield per acre through rotational diversity. We handle everything from seed selection to harvest logistics.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L10.25 11H13V17L17 11H14.5L18 6H14Z"/>
+                            <path d="M22 20V22H2V20L4 12H2V10H6.34L12 2L17.66 10H22V12H20L22 20ZM12 5.86L8.46 10.86L6.5 13.66L7.91 19.33H16.09L17.5 13.66L15.54 10.86L12 5.86Z"/>
+                        </svg>
+                    </div>
+                    <h3>Forestry & Land Management</h3>
+                    <p>Sustainable timber harvesting and forest regeneration are at the core of our operations. We provide comprehensive land management services that balance economic return with wildlife habitat preservation. Our team navigates complex regulatory environments to ensure full compliance.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2 22 6.477 22 12 17.523 22 12 22zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"/>
+                        </svg>
+                    </div>
+                    <h3>Resource Consulting</h3>
+                    <p>Strategic planning for agricultural enterprises looking to modernize their operations. We offer consultancy on water usage efficiency, soil amendments, and crop rotation schedules. Our goal is to reduce operational overhead while increasing overall farm output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Why Choose Us</span>
+                <h2>The AS AGRICULTURE Advantage</h2>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-number">01</div>
+                    <h3>Eco-Centric Approach</h3>
+                    <p>Every decision we make prioritizes the long-term health of the land. We believe that true profitability comes from working with nature, not against it.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">02</div>
+                    <h3>Advanced Technology</h3>
+                    <p>We utilize cutting-edge GPS field mapping and data analytics to minimize waste and optimize input application across all acres.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-number">03</div>
+                    <h3>Compliance & Safety</h3>
+                    <p>Strict adherence to state and federal regulations ensures that our operations are safe, legal, and ethically sound for all stakeholders involved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section bg-white" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Workflow</span>
+                <h2>From Analysis to Harvest</h2>
+            </div>
+
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-circle">1</div>
+                    <h3>Land Assessment</h3>
+                    <p>We begin with a thorough analysis of soil composition, topography, and climate data to determine the optimal crop strategy.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-circle">2</div>
+                    <h3>Strategic Implementation</h3>
+                    <p>Our team deploys resources, prepares the land, and executes planting using precision equipment to ensure uniform growth.</p>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-circle">3</div>
+                    <h3>Sustainable Harvest</h3>
+                    <p>We utilize efficient harvesting techniques that maximize crop quality while preparing the land for the next regeneration cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                AS AGRICULTURE LLC
+            </div>
+            
+            <div class="footer-info">
+                <div class="footer-block">
+                    <h4>Visit Us</h4>
+                    <p>9701 Sara Ann Ct</p>
+                    <p>Dublin, CA 94568</p>
+                    <p>United States</p>
+                </div>
+                <div class="footer-block">
+                    <h4>Contact Us</h4>
+                    <p>For inquiries and partnerships:</p>
+                    <p><a href="mailto:main@asagriculture.info" style="color: white; text-decoration: underline;">main@asagriculture.info</a></p>
+                </div>
+                <div class="footer-block">
+                    <h4>Start Now</h4>
+                    <p>Ready to optimize your land?</p>
+                    <button class="btn btn-primary open-modal-btn" style="margin-top: 0.5rem; padding: 0.5rem 1.5rem;">Contact Us</button>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+            &copy; 2023 AS AGRICULTURE LLC. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-container">
+            <button class="close-modal" id="closeModal">&times;</button>
+            
+            <div id="modalFormContent">
+                <div class="text-center" style="margin-bottom: 2rem;">
+                    <h3>Get in Touch</h3>
+                    <p>Fill out the form below and we will get back to you shortly.</p>
+                </div>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-control" required placeholder="Partnership Inquiry">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-control" required placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    
+                    <p style="font-size: 0.8rem; margin-top: 1rem; text-align: center; color: #9CA3AF;">
+                        We respect your privacy. No phone numbers required.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <h3>Message Sent!</h3>
+                <p>Thank you for contacting AS AGRICULTURE LLC. We will respond to your email shortly.</p>
+                <button class="btn btn-outline" style="color: var(--color-primary); border-color: var(--color-primary); margin-top: 1rem;" onclick="closeModalFunc()">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('contactModal');
+        const openBtns = document.querySelectorAll('.open-modal-btn');
+        const closeBtn = document.getElementById('closeModal');
+        const contactForm = document.getElementById('contactForm');
+        const formContent = document.getElementById('modalFormContent');
+        const successMessage = document.getElementById('successMessage');
+
+        // Open Modal
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+                // Reset form state on reopen
+                if(successMessage.style.display === 'block') {
+                    successMessage.style.display = 'none';
+                    formContent.style.display = 'block';
+                    contactForm.reset();
+                }
+            });
+        });
+
+        // Close Modal Function
+        function closeModalFunc() {
+            modal.classList.remove('active');
+        }
+
+        closeBtn.addEventListener('click', closeModalFunc);
+
+        // Close on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Form Submission Simulation
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate API call/processing
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                // Hide form, show success
+                formContent.style.display = 'none';
+                successMessage.style.display = 'block';
+                
+                // Reset button
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.padding = '0.75rem 0';
+                header.style.background = 'rgba(26, 60, 40, 0.98)';
+            } else {
+                header.style.padding = '1.25rem 0';
+                header.style.background = 'rgba(26, 60, 40, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
